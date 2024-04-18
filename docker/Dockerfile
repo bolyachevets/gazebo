@@ -89,7 +89,9 @@ RUN chown -R codecov.application /var/www/app && \
   chown -R codecov.application /var/log/nginx && \
   chmod +x /usr/bin/start-nginx && \
   chown codecov.application /etc/nginx/nginx.conf && \
-  chmod -R 777 /etc/nginx
+  chmod -R 777 /etc/nginx && \
+  chmod -R 777 /var/lib/nginx && \
+  chmod -R 777 /run
 # Switch to use a non-root user from here on
 USER codecov
 
