@@ -83,6 +83,7 @@ RUN  addgroup -S application \
 COPY --chown=codecov:application docker/start-nginx.sh /usr/bin/start-nginx
 
 RUN chown -R codecov.application /var/www/app && \
+  chmod -R 777 /var/www/app && \
   chown -R codecov.application /run && \
   chown -R codecov.application /var/lib/nginx && \
   chown -R codecov.application /var/log/nginx && \
