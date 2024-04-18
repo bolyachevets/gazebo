@@ -94,7 +94,7 @@ USER codecov
 
 # Add application
 WORKDIR /var/www/app
-COPY --from=build --chmod=755 --chown=codecov:application /home/workspace/build/ /var/www/app/gazebo
+COPY --from=build --chmod=777 --chown=codecov:application /home/workspace/build/ /var/www/app/gazebo
 COPY --from=uploader --chown=codecov:application /tmp/uploader/ /var/www/uploader/
 
 EXPOSE 8080
